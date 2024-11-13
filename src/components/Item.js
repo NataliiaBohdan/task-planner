@@ -3,10 +3,10 @@ export default function Item({ item, onDeleteItems, onToggleCheckbox }) {
     <li>
       <input
         type="checkbox"
-        value={item.packed}
+        value={item.status}
         onChange={() => onToggleCheckbox(item.id)}
       />
-      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+      <span style={item.status ? { textDecoration: "line-through" } : {}}>
         {item.quantity}&nbsp;
         {item.description}
       </span>

@@ -5,7 +5,7 @@ export default function Form({ onAddItems, chooseDay }) {
   function handleSubmit(e) {
     e.preventDefault();
     if (!description) return;
-    const newItem = { description, pasked: false, id: Date.now() };
+    const newItem = { description, status: false, id: Date.now() };
     onAddItems(newItem);
     setDescription("");
   }

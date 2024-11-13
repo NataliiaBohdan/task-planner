@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Form from "./Form";
-import PackingList from "./PackingList";
+import TasksList from "./TasksList";
 import Stats from "./Stats";
 
 export default function DayToChoose() {
@@ -36,7 +36,7 @@ export default function DayToChoose() {
   function handleToggleItem(id) {
     setItems((prevItems) => {
       const updatedDayItems = prevItems[chooseDay].map((item) =>
-        item.id === id ? { ...item, packed: !item.packed } : item
+        item.id === id ? { ...item, status: !item.status } : item
       );
       return {
         ...prevItems,
@@ -79,7 +79,7 @@ export default function DayToChoose() {
         ))}
       </div>
       <Form onAddItems={handleItemAdd} chooseDay={chooseDay} />
-      <PackingList
+      <TasksList
         items={items[chooseDay]}
         onDeleteItems={handleDeleteItem}
         onToggleCheckbox={handleToggleItem}
